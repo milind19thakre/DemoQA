@@ -15,8 +15,10 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
+
+
     @FindBy(xpath="//div[@class='card-body']/h5[text()='Elements']")
-    private WebElement Elements_xpath ;
+    public WebElement Elements_xpath ;
 
     public String getPageTitle() {
         return driver.getTitle();
