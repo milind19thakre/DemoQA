@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import base.DriverFactory;
@@ -13,11 +14,14 @@ public class HomePage_sd {
 
 
     @Then("page title should be correct")
-    public void verify_page_title() {
+    public void verify_page_title() throws InterruptedException {
 
         String actualTitle = homePage.getPageTitle();
         System.out.println("Page Title: " + actualTitle);
 
         Assert.assertTrue(actualTitle.contains(Constants.HOME_PAGE_TITLE));
+        Thread.sleep(5000L);
     }
+
+
 }
